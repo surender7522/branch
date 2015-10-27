@@ -1,0 +1,16 @@
+<h1>Poll detail</h1>
+<h1>{{ poll.question }}</h1>
+
+    <u1>
+        {% for choice in poll.choice_set.all %}
+
+            <li>{{ choice.choice }}</li>
+        {% endfor %}
+    </u1>
+{% for poll in poll_list %}
+    <li><a href="/branch_change/{{ poll.id }}/">{{ poll.question }}</a> </li>
+    {% for choice in poll.choice_set.all %}
+        <li>{{ choice.choice }}</li>
+    {% endfor %}
+{% endfor %}
+    <p>No polls</p>
